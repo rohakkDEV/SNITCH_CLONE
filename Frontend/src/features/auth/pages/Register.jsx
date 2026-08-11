@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from "../hook/useAuth"
 import { useNavigate } from 'react-router';
+import ContinueWithGoogle from '../components/ContinueWithGoogle';
 
 const Register = () => {
 
@@ -150,9 +151,7 @@ const Register = () => {
 
                         </div>
 
-                        <a href="/api/auth/google"
-                            className="text-sm text-[#e5e2e1] group-hover:text-[#FFD700] cursor-pointer"
-                        > Continue with Google</a>
+                        
 
                         {/* Submit Button */}
                         <button
@@ -161,6 +160,8 @@ const Register = () => {
                         >
                             Sign Up
                         </button>
+
+                        <ContinueWithGoogle/>
 
                         <div className="text-center mt-6">
                             <a href="/login" className="text-sm text-[#999077] hover:text-[#FFD700] transition-colors border-b border-transparent hover:border-[#FFD700] py-0.5">
