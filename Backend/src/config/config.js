@@ -15,9 +15,6 @@ if (!process.env.GOOGLE_CLIENT_ID) {
 if (!process.env.GOOGLE_CLIENT_SECRET) {
     throw new Error("google client secret is not defined in environment variables")
 }
-if (!process.env.GOOGLE_CALLBACK_URL) {
-    throw new Error("google callback url is not defined in environment variables")
-}
 
 
 export const config = {
@@ -25,5 +22,6 @@ export const config = {
     JWT_SECRET: process.env.JWT_SECRET,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-    GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL,
+    GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL || "development",
+    IMAGEKIT_PRIVATE_KEY: process.env.IMAGEKIT_PRIVATE_KEY,
 }
