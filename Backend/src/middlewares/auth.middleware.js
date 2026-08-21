@@ -7,7 +7,7 @@ export const authenticateSeller = async (req,res,next)=>{
     const token = req.cookies.token
 
     if(!token){
-        return res.status(40).json({message: "Unauthorized"})
+        return res.status(401).json({message: "Unauthorized"})
     }
     try{
         const decoded = jwt.verify(token,config.JWT_SECRET)
